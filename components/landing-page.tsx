@@ -2,8 +2,6 @@
 
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
 import { useRef, useState } from "react"
 
 export function LandingPage() {
@@ -50,37 +48,32 @@ export function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#004D2F]">
       <header className="fixed top-0 w-full z-50 px-4 lg:px-6 h-16 flex items-center bg-black/20 backdrop-blur-sm">
-        <Link className="flex items-center justify-center" href="#">
-          <Image
-            src="/assets/bridge.jpg"
+        <a className="flex items-center justify-center" href="#">
+          <img
+            src="/assets/icon.jpg"
             alt="Zimbabwe Pavilion Logo"
-            className="h-10 w-10 object-cover"
-            height={40}
-            width={40}
+            className="h-10 w-10 rounded-full object-cover"
           />
           <span className="ml-2 text-xl font-bold text-white">Zimbabwe Pavilion</span>
-        </Link>
+        </a>
         <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-sm font-medium text-white hover:text-[#FFB900] transition-colors" href="#about">
+          <a className="text-sm font-medium text-white hover:text-[#FFB900] transition-colors" href="#about">
             About
-          </Link>
-          <Link className="text-sm font-medium text-white hover:text-[#FFB900] transition-colors" href="#destinations">
+          </a>
+          <a className="text-sm font-medium text-white hover:text-[#FFB900] transition-colors" href="#destinations">
             Destinations
-          </Link>
-          <Link className="text-sm font-medium text-white hover:text-[#FFB900] transition-colors" href="#contact">
+          </a>
+          <a className="text-sm font-medium text-white hover:text-[#FFB900] transition-colors" href="#contact">
             Contact
-          </Link>
+          </a>
         </nav>
       </header>
       <main className="flex-1">
         <section className="relative min-h-screen flex items-center justify-center">
-          <Image
+          <img
             src="/assets/vic-falls.jpg"
             alt="Victoria Falls aerial view"
             className="absolute inset-0 object-cover w-full h-full"
-            fill
-            priority
-            quality={100}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#004D2F] via-[#004D2F]/50 to-black/30" />
           <div className="relative z-10 container px-4 md:px-6 py-12 md:py-24 lg:py-32">
@@ -96,6 +89,7 @@ export function LandingPage() {
               </Button>
             </div>
             <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-white max-w-5xl mx-auto">
+              {/* Feature sections */}
               <div className="space-y-2">
                 <div className="text-[#FFB900] text-xl font-bold">01</div>
                 <h3 className="text-xl font-bold">Discover Our Heritage</h3>
@@ -114,6 +108,7 @@ export function LandingPage() {
             </div>
           </div>
         </section>
+        {/* Destinations section */}
         <section id="destinations" className="py-12 md:py-24 lg:py-32 bg-gradient-to-b from-[#004D2F] to-[#003D2F]">
           <div className="container px-4 md:px-6">
             <div className="flex items-center justify-between mb-8">
@@ -165,11 +160,10 @@ export function LandingPage() {
                         Featured
                       </div>
                       <div className="flex-1 relative mt-8">
-                        <Image
+                        <img
                           src={destination.image}
                           alt={destination.title}
-                          className="object-cover rounded-lg"
-                          fill
+                          className="absolute inset-0 w-full h-full object-cover rounded-lg"
                         />
                       </div>
                       <div className="mt-4">
@@ -194,6 +188,7 @@ export function LandingPage() {
             </div>
           </div>
         </section>
+        {/* About section */}
         <section id="about" className="py-12 md:py-24 lg:py-32 bg-gradient-to-b from-[#003D2F] to-[#002D2F]">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 items-center">
@@ -211,11 +206,10 @@ export function LandingPage() {
                 <Button className="bg-white text-[#004D2F] hover:bg-white/90">Learn More About Us</Button>
               </div>
               <div className="relative aspect-square rounded-3xl overflow-hidden">
-                <Image
+                <img
                   src="/assets/harare.jpg"
                   alt="About Zimbabwe"
-                  className="object-cover"
-                  fill
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -226,22 +220,20 @@ export function LandingPage() {
         <div className="container px-4 md:px-6 py-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="flex items-center space-x-2">
-              <Image
-                src="/assets/bridge.jpg"
+              <img
+                src="/assets/icon.jpg"
                 alt="Zimbabwe Pavilion Logo"
                 className="h-8 w-8 object-cover"
-                height={32}
-                width={32}
               />
               <span className="text-sm">© 2024 Zimbabwe Pavilion. All rights reserved.</span>
             </div>
             <nav className="flex gap-4">
-              <Link className="text-sm hover:text-[#FFB900]" href="#">
+              <a className="text-sm hover:text-[#FFB900]" href="#">
                 Privacy Policy
-              </Link>
-              <Link className="text-sm hover:text-[#FFB900]" href="#">
+              </a>
+              <a className="text-sm hover:text-[#FFB900]" href="#">
                 Terms of Service
-              </Link>
+              </a>
             </nav>
           </div>
         </div>
